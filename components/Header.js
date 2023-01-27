@@ -16,6 +16,7 @@ export default function Header({ name }) {
       <style jsx>{`
         .logo-screw {
           margin: 0 auto;
+          padding-bottom: 5px;
         }
       `}</style>
     </header>
