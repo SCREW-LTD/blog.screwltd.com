@@ -5,7 +5,7 @@ export const getGlobalData = () => {
   const blogTitle = process.env.BLOG_TITLE
     ? decodeURI(process.env.BLOG_TITLE)
     : 'Next.js Blog Theme';
-  const footerText = process.env.BLOG_FOOTER_TEXT
+  const footerText = 'All rights reserved.';
     ? decodeURI(process.env.BLOG_FOOTER_TEXT)
     : 'All rights reserved.';
 
