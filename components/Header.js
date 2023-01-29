@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Header({ name }) {
   return (
-    <header className="pt-20 pb-12">
+    <header className="pt-20 pb-4">
       <Link href="/">
         <img className="logo-screw" src="https://raw.githubusercontent.com/moonway-dev/screw-blog/main/components/logo.png" />
       </Link>

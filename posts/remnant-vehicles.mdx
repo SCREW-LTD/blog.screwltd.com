@@ -2,31 +2,33 @@
 title: REMNANT
 description: "PRE-ALPHA 0.0.96"
 date: Jan 27 2023
+tag: "#remnant"
 ---
 
 ## Changes
 - Vehicles
 - Updated character physics
 - You can connect your Discord account
-- Epic Online Services integration
+- Epic Online Services integration 
 - Updates timeline in menu
+- Ragdoll
 
 ## Physics update
 old:
-```
-Drag = 0f;
-Angular drag = 0f;
+```csharp
+Rigidbody.drag = 0f;
+Rigidbody.angularDrag = 0f;
 ```
 
 new:
-```
-Drag = 0.05f;
-Angular drag = 0.01f;
+```csharp
+Rigidbody.drag = 0.05f;
+Rigidbody.angularDrag = 0.01f;
 ```
 
 ## Integrations
 
-| SERVICE | API |
+| <span style={{color: '#C39BD3'}}>SERVICE</span> | <span style={{color: '#C39BD3'}}>API</span> |
 | ------ | ------ |
 | Epic Games | https://dev.epicgames.com/docs/dev-portal|
 | Discord | https://discord.com/developers/docs/intro |
