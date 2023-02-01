@@ -56,7 +56,14 @@ export default function PostPage({
             <MDXRemote {...source} components={components} />
           </article>
         </main>
-        <div className="grid md:grid-cols-2 lg:-mx-24 mt-12">
+        {frontMatter.developer && (
+          <Link href={'https://' + frontMatter.developer + ".screwltd.com/"}>
+            <div className="cursor-pointer rounded-lg w-max py-2 px-2 mt-2 backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
+              <p className="cursor-pointer center-text text-l font-medium"><img className='cursor-pointer center-text w-9 h-9 rounded-full' src={"https://screwltd.com/developers/" + frontMatter.developer + ".png"} />&nbsp;&nbsp;{frontMatter.developer}&nbsp;</p>
+            </div>
+          </Link>
+        )}
+        <div className="grid mt-4 md:grid-cols-2 lg:-mx-24 ">
           {prevPost && (
             <Link href={`/posts/${prevPost.slug}`}>
               <a className="py-8 px-10 text-center md:text-right first:rounded-t-lg md:first:rounded-tr-none md:first:rounded-l-lg last:rounded-r-lg first last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 last:border-t md:border-r-0 md:last:border-r md:last:rounded-r-none flex flex-col">
@@ -94,6 +101,20 @@ export default function PostPage({
         variant="small"
         className="absolute bottom-0 opacity-20 dark:opacity-10"
       />
+      <style jsx>{`
+        .center-text {
+          vertical-align: middle;
+          display: inline;
+        },
+        .dev-block {
+          height: 20px;
+          width: 20px;
+        },
+        .developers
+        {
+          display: inline;
+        }
+      `}</style>
     </Layout>
   );
 }
