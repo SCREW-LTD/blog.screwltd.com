@@ -57,13 +57,35 @@ export default function PostPage({
           </article>
         </main>
         {frontMatter.developer && (
-          <Link href={'https://' + frontMatter.developer + ".screwltd.com/"}>
-            <div className="cursor-pointer rounded-lg w-max py-2 px-2 mt-2 backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
-              <p className="cursor-pointer center-text text-l font-medium"><img className='cursor-pointer center-text w-9 h-9 rounded-full' src={"https://screwltd.com/developers/" + frontMatter.developer + ".png"} />&nbsp;&nbsp;{frontMatter.developer}&nbsp;</p>
-            </div>
-          </Link>
+          <div className='mt-4 whitespace-nowrap'>
+            <a href={'https://' + frontMatter.developer + ".screwltd.com/"}>
+              <div className="inline cursor-pointer rounded-lg w-max py-3.5 px-2 mt-2 backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
+                <p className="cursor-pointer center-text text-l pb-1 font-medium"><img className='cursor-pointer center-text w-9 h-9 rounded-full' src={"https://cdn.screwltd.com/developers/" + frontMatter.developer + ".png"} />&nbsp;&nbsp;{frontMatter.developer}&nbsp;</p>
+              </div>
+            </a>
+
+            {frontMatter.developer2 && (
+              <div className='inline whitespace-nowrap'>
+                &nbsp;&nbsp;&nbsp;
+                <a href={'https://' + frontMatter.developer2 + ".screwltd.com/"}>
+                  <div className="inline cursor-pointer rounded-lg w-max py-3.5 px-2 mt-2 backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
+                    <p className="cursor-pointer center-text text-l pb-1 font-medium"><img className='cursor-pointer center-text w-9 h-9 rounded-full' src={"https://cdn.screwltd.com/developers/" + frontMatter.developer2 + ".png"} />&nbsp;&nbsp;{frontMatter.developer2}&nbsp;</p>
+                  </div>
+                </a>
+              </div>
+            )}
+
+            {frontMatter.support && (
+              <div className='inline whitespace-nowrap'>
+                &nbsp;&nbsp;&nbsp;
+                <div className="inline cursor-pointer rounded-full py-2.5 px-2 mt-2 backdrop-blur-lg bg-white dark:bg-purple-500 dark:bg-opacity-40 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
+                  <img src='https://cdn.screwltd.com/blog/gpay.png' className='w-7 h-7 inline pr-1 pb-1 mb-0' />
+                </div>
+              </div>
+            )}
+          </div>
         )}
-        <div className="grid mt-4 md:grid-cols-2 lg:-mx-24 ">
+        <div className="grid mt-6 md:grid-cols-2 lg:-mx-24 ">
           {prevPost && (
             <Link href={`/posts/${prevPost.slug}`}>
               <a className="py-8 px-10 text-center md:text-right first:rounded-t-lg md:first:rounded-tr-none md:first:rounded-l-lg last:rounded-r-lg first last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 last:border-t md:border-r-0 md:last:border-r md:last:rounded-r-none flex flex-col">
@@ -105,6 +127,8 @@ export default function PostPage({
         .center-text {
           vertical-align: middle;
           display: inline;
+          position: relative;
+          top: -0.5px;
         },
         .dev-block {
           height: 20px;
@@ -115,6 +139,7 @@ export default function PostPage({
           display: inline;
         }
       `}</style>
+
     </Layout>
   );
 }
