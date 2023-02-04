@@ -44,9 +44,17 @@ export default function PostPage({
       <Header name={globalData.name} />
       <article className="px-6 md:px-0">
         <header>
-          <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
+          <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-3">
             {frontMatter.title}
           </h1>
+          {frontMatter.tag && (
+            <center>
+              <div className="align-middle rounded-full w-max px-2 mt-2 backdrop-blur-lg bg-white dark:bg-purple-500 dark:bg-opacity-40 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
+                <p className='text-sm font-sans font-thin'>{frontMatter.tag}</p>
+              </div>
+            </center>
+          )}
+          <div className='mb-3' />
           {frontMatter.description && (
             <p className="text-xl mb-4">{frontMatter.description}</p>
           )}
@@ -78,9 +86,13 @@ export default function PostPage({
             {frontMatter.support && (
               <div className='inline whitespace-nowrap'>
                 &nbsp;&nbsp;&nbsp;
-                <div className="inline cursor-pointer rounded-full py-2.5 px-2 mt-2 backdrop-blur-lg bg-white dark:bg-purple-500 dark:bg-opacity-40 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
-                  <img src='https://cdn.screwltd.com/blog/gpay.png' className='w-7 h-7 inline pr-1 pb-1 mb-0' />
-                </div>
+                {frontMatter.title == 'REMNANT' && (
+                  <a href='https://pages.donately.com/screwltd/campaign/remnant-7bbc8c108f5e'>
+                    <div className="inline cursor-pointer rounded-full py-2.5 px-2 mt-2 backdrop-blur-lg bg-white dark:bg-purple-500 dark:bg-opacity-40 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 md:border-r-1">
+                      <img src='https://cdn.screwltd.com/blog/bank.png' className='w-7 h-7 inline pr-0.5 pl-0.5 pb-1 mb-0' />
+                    </div>
+                  </a>
+                )}
               </div>
             )}
           </div>
